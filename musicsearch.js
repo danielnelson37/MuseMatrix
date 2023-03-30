@@ -1,3 +1,7 @@
+// window.addEventListener("load", (event) => {
+
+// });
+
 const answer = document.getElementById("answer");
 const searchform = document.getElementById("searchForm");
 const songlist = document.getElementById("songlist");
@@ -14,7 +18,7 @@ const options = {
 
 //input should come from the user input string
 //${input}
-
+let songId = "";
 let artist = "";
 let artistid = "";
 searchform.addEventListener("submit", (e) => {
@@ -36,6 +40,18 @@ function fetchArtistNum() {
     .catch((err) => console.error(err));
 }
 
+function getALink(songId) {
+  fetch(
+    `https://genius-song-lyrics1.p.rapidapi.com/song/details/?id=${songId}`,
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      const ytlink = response.song.youtube_url;
+    })
+    .catch((err) => console.error(err));
+}
+
 function recommendations(artistId) {
   fetch(
     `https://genius-song-lyrics1.p.rapidapi.com/song/recommendations/?id=${artistId}`,
@@ -43,22 +59,28 @@ function recommendations(artistId) {
   )
     .then((response) => response.json())
     .then((response) => {
+      let container = document.createElement("div");
+      container.style.display = "flex";
+      container.style.flexDirection = "row";
       response.song_recommendations.recommendations.forEach((e) => {
-        console.log(e.recommended_song.full_title);
-        console.log(e.recommended_song.song_art_image_url);
+        let songTitle = e.recommended_song.full_title; //song title
+        let coverArt = e.recommended_song.song_art_image_url; //pic
+        let songId = e.recommended_song.id; //number
+        getALink(songId);
         let newDiv = document.createElement("div");
-        imgsection.append(newDiv);
-        let songText = document.createTextNode(e.recommended_song.full_title);
-        newDiv.append(songText);
+        newDiv.style.marginRight = "7%";
+        let textBx = document.createElement("div");
+        textBx.innerText = songTitle;
+        textBx.style.textAlign = "center";
         let img = document.createElement("img");
-        img.src = e.recommended_song.song_art_image_url;
-        img.height = 150;
-        img.width = 150;
-        newDiv.append(img);
+        img.src = coverArt;
+        img.height = 200;
+        img.width = 200;
+        newDiv.append(textBx, img);
+        container.append(newDiv);
       });
+      imgsection.append(container);
     })
 
     .catch((err) => console.error(err));
 }
-//artist id should be the id number serch returns
-//${artistid}
