@@ -4,19 +4,62 @@
     box-sizing: border-box;
 }
 
+
+body{
+    background: rgb(180,161,134);
+background: radial-gradient(circle, rgba(180,161,134,1) 0%, rgba(17,17,17,1) 100%);
+
+
+}
+
+
 .grid {
     width: 100%;
     height: 100%;
-    padding: 5%;
+    padding: 2%;
+    /* background-color: grey; */
+    /* background: rgb(180,161,134);
+background: radial-gradient(circle, rgba(180,161,134,1) 0%, rgba(233,233,233,1) 100%); */
+/* background: rgb(180,161,134);
+background: radial-gradient(circle, rgba(180,161,134,1) 0%, rgba(17,17,17,1) 100%); */
 }
+
+
+
+
+
+
+header{
+    /* background-color: #101010; */
+    color: white;
+}
+
+
+.navbar-brand {
+    font-size: 60px !important;
+    font-weight: bold;
+}
+
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+
+#navbarNav{
+    display: flex;
+    justify-content:flex-end;
+    font-size: 20px;
+}
+
 
 main {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);/* Creates 12 columns, equal size*/
-    grid-template-rows: repeat(12, 1fr);/* Creates 12 rows, equal size*/
-    background: lightcoral;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+
 
     @media all and (max-width: 1200px) {
         display: grid;
@@ -24,116 +67,109 @@ main {
     }
 }
 
-.input-group mb-3{
+
+
+
+.pagetitle{
+   /* font-size: 5em; */
+   font-weight:bold;
+   max-width: 100%;
+   padding-bottom: 1rem;
+}
+
+
+.searchForm{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     max-width: 100%;
+   
+}
+.searchForm input{
+    border: none;
+    grid-column: 1/ span 3;
+    border-radius: 10px 0 0 10px;
+    padding: .5rem;
+   
+}
+.searchForm button{
+    grid-column: 4;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: #00AFB5;
+    color: white;
+    padding: .5rem;
 }
 .categories {
-    grid-column: 1 / span 4;/*Spans 3 columns, starting at 1st one*/
-    grid-row: 1 / span 12;/*Spans 11 rows, starting at 1st one*/
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 12;
     padding: 3em;
-    background: lightgreen;
+   
+    /* background: white; */
+    background-color: #252525;
+    color: white;
+    border-radius: 10px;
+   
 }
 
-/* .art {
-    grid-column: 5 / span 8;
-    grid-row: 1 / span 8;
-    background: lightpink;
-} */
 
-.info {
-    grid-column: 5 / span 8;
-    grid-row: 9 / span 4;
-    background: lightskyblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 
 
 .content {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
+   text-align: center;
 }
 
+
 .content__h2 {
-    /* font-family: $font1; */
     font-size: 4.5em;
 }
 
+
 .content__h5 {
-    padding-top: .5rem;
+    /* padding-top: .5rem; */
     font-size: 1.5em;
-    /* color: $color1; */
 }
+
 
 .year {
     font-size: 1 em;
              
 }
 
-.circle__wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-
-.circle {
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background: $color1; */
-}
-
- .circle__icon {
-            color: white;
-            font-size: 24px;
-        }
-    
 
 .categories__h1 {
         font-size: 2.5em;
-        padding-bottom: 1rem;
+         padding-top: 1rem;
     }
+
 
 .categories__h6 {
-        font-size: .9em;
-        padding: 2.5rem 0 1rem 0;
+        font-size: 1.5em;
+        padding: 1.5rem 0 1rem 0;
     }
 
-    .box__item {
+
+.box__item {
         border: 1px solid #ccc;
         padding: .8rem;
+        border-radius: 10px;
         margin: .2rem 0 .2rem 0;
         display: inline-block;
         position: relative;
         cursor: pointer;
-        z-index: 1;}
+        z-index: 1;
+}
+
 
 .active {
             border: none;
             color: white;
-        }
-    
-/* .box__item {
-    border: 1px solid #ccc;
-    padding: .8rem;
-    margin: .2rem 0 .2rem 0;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    z-index: 1;} */
+}
+
 
 .active {
     border: none;
-    background: red;
+    background: #00AFB5;
     color: white;
 }
 .box__item::after {
@@ -143,52 +179,112 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .1); 
+    background: rgba(0, 0, 0, .1);
     z-index: -1;
     transition: transform 175ms ease-in;
     transform: scaleX(0);
     transform-origin: left;
 }
-:hover:after  {
-    transform: scaleX(1);
-}
+
 
 .box {
     padding-top: 1rem;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
 }
 .generate {
     background: #333;
+    border-radius: 10px;
     color: white;
-    }
-    .art {
-        grid-column: 5 / span 8;
-        grid-row: 1 / span 8;
-        background: #f9f9f9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        /* @media all and (max-width: 1200px) {
-            min-height: 500px;
-        } */
+    padding: 1rem;
     }
 
-.carousel-inner{
-    height: 100%;
+
+#clear-button{
+    background: #333;
+    border-radius: 10px;
+    color: white;
+    padding: 1rem;
 }
-        img {
-            max-height: 30vh;
-            max-width: 20vw;
+.box::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .1);
+        z-index: -1;
+        transition: transform 175ms ease-in;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+   
+
+
+.art {
+    grid-column: 5 / span 12;
+    grid-row: 1 / span 12;
+    /* background: #f9f9f9; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: 2%;
+}
+
+
+.carouselExample{
+    width: 100%;
+}
+
+
+.card {
+    background-color: #252525 !important; /* set the background color */
+    color: white !important; /* set the color */
+    border-radius: 10px; /* add rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
+  }
+
+
+.like-button{
+    border: 1px solid #ccc;
+    padding: .8rem;
+    border-radius: 10px;
+    margin: .2rem 0 .2rem 0;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #00AFB5;
+    color: white;
+}
+
+
+.card-img-top {
+    max-height: 100%;
+    max-width: 100%;
             @media all and (max-width: 1200px) {
                 max-height: 300px;
                 max-width: 300px;
             }
+
+
         }
-        .painting {
-            margin: 0 5em;
-        }
-    
-    
+
+
+.painting {
+    margin: 0 5em;
+}
+
+
+footer {
+    /* background-color: #101010; */
+    color: white;
+}
+   
+
+
+
+
