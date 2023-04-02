@@ -1,4 +1,21 @@
 
 body{
-    background-color:rgb(221, 37, 37);
+    background-color:#00AFB5;
+    font-family: fantasy;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+header{
+    color: white;
+  font-size: x-large;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#buttons{
+    display: flex;
+    justify-content: space-around;
 }

@@ -9,10 +9,12 @@
     <script defer src="musicsearch.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
+
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Vibquest</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -21,24 +23,25 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="home.html">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="playlist.html">Features</a>
-              </li>
             </ul>
           </div>
         </div>
-      </nav>
-      <header><h1>MUSIC</h1></header>
+      </nav> 
+      <div id="page">
+    <header>
+      <h1>Discover New Music</h1>
+    </header>  
     <main>
     <form id="searchForm">
       <h1>Lookup your favorite artist,song or album </h1>
       <input type="text" id="answer"></input>
       <button id="searchbutton" type="submit">Submit</button>
     </form>
-    <section id="recomendationdiv">
-    </section>  
+    <div id="recomendationdiv">
+    </div>  
 </main>
     <footer> Copyright @2023 Vibequest </footer>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
 </html>
