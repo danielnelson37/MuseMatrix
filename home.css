@@ -1,7 +1,13 @@
 
+*{
+    box-sizing: border-box; 
+}
+
 body{
-    background-color:#00AFB5;
-    font-family: fantasy;
+    color: white;
+    background: rgb(180, 161, 134);
+    background: radial-gradient(circle,rgba(180,161,134,1)0%,rgba(17,17,17,1)100%);
+    font-family: sans-serif;
 }
 h1{
     display: flex;
@@ -10,7 +16,7 @@ h1{
 header{
     color: white;
   font-size: x-large;
-    padding: 100px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -19,3 +25,4 @@ header{
     display: flex;
     justify-content: space-around;
 }
+ 

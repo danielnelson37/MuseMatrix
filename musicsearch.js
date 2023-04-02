@@ -1,86 +1,83 @@
-// window.addEventListener("load", (event) => {
-
-// });
-
-const answer = document.getElementById("answer");
 const searchform = document.getElementById("searchForm");
-const songlist = document.getElementById("songlist");
-const searchbutton = document.getElementById("searchbutton");
 const imgsection = document.getElementById("recomendationdiv");
-const artname = document.getElementById("name");
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "0d609c289bmshcb34f3875230314p16af7bjsn0b34283e7eb7",
-    "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
-  },
-};
+const refreshbutton = document.getElementById("refresh");
 
-//input should come from the user input string
-//${input}
-let songId = "";
+
 let artist = "";
-let artistid = "";
+let playlist =[]
+
+refreshbutton.addEventListener("click", () => {
+    searchform.reset();
+    while(document.getElementById("container")){
+      document.getElementById("container").remove();
+    }
+    
+})
+
 searchform.addEventListener("submit", (e) => {
   e.preventDefault();
   artist = answer.value;
   console.log(artist);
-  fetchArtistNum(artist);
+  artistIdNum(artist);
 });
 
-function fetchArtistNum() {
-  fetch(
-    `https://genius-song-lyrics1.p.rapidapi.com/search/?q=${artist}&per_page=1&page=1`,
-    options
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      recommendations(data.hits[0].result.id);
-    })
-    .catch((err) => console.error(err));
-}
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "0d609c289bmshcb34f3875230314p16af7bjsn0b34283e7eb7",
+    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+  },
+};
 
-function getALink(songId) {
-  fetch(
-    `https://genius-song-lyrics1.p.rapidapi.com/song/details/?id=${songId}`,
-    options
-  )
+function artistIdNum() {
+  fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist}`, options)
     .then((response) => response.json())
     .then((response) => {
-      const ytlink = response.song.youtube_url;
+      const result = [];
+      let array = response.data;
+      for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * array.length);
+        const randomItem = array.splice(randomIndex, 1)[0];
+        result.push(randomItem);
+      }
+      console.log(result);
+      console.log(response.data);
+      makeDiv(result);
     })
     .catch((err) => console.error(err));
 }
 
-function recommendations(artistId) {
-  fetch(
-    `https://genius-song-lyrics1.p.rapidapi.com/song/recommendations/?id=${artistId}`,
-    options
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      let container = document.createElement("div");
-      container.style.display = "flex";
-      container.style.flexDirection = "row";
-      response.song_recommendations.recommendations.forEach((e) => {
-        let songTitle = e.recommended_song.full_title; //song title
-        let coverArt = e.recommended_song.song_art_image_url; //pic
-        let songId = e.recommended_song.id; //number
-        getALink(songId);
-        let newDiv = document.createElement("div");
-        newDiv.style.marginRight = "7%";
-        let textBx = document.createElement("div");
-        textBx.innerText = songTitle;
-        textBx.style.textAlign = "center";
-        let img = document.createElement("img");
-        img.src = coverArt;
-        img.height = 200;
-        img.width = 200;
-        newDiv.append(textBx, img);
-        container.append(newDiv);
-      });
-      imgsection.append(container);
-    })
+function makeDiv(result) {
+  let container = document.createElement("div");
 
-    .catch((err) => console.error(err));
+  result.forEach((element) => {
+    let songTitle = element.title;
+    console.log(songTitle);
+    let coverArt = element.album.cover;
+    console.log(coverArt);
+
+    container.id = "container";
+    let newDiv = document.createElement("div");
+    let textBx = document.createElement("p");
+    let newbutton = document.createElement("button");
+    newDiv.id = "seletedmusic";
+    textBx.innerText = songTitle;
+    let img = document.createElement("img");
+    img.src = coverArt;
+    img.height = 180;
+    img.width = 180;
+    newbutton.innerText = "add to playlist";
+    newbutton.id = "playlist";
+    newDiv.append(textBx, img, newbutton);
+    container.append(newDiv);
+    imgsection.append(container);
+    
+    if(newbutton.addEventListener("click",(e)=>{
+      newbutton.innerText="added"
+    }
+    ));
+  });  
 }
+
+
+
