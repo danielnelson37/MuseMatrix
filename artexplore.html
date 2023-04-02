@@ -10,9 +10,10 @@
     <script src="artexplore.js" defer></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <header>
+     <nav class="navbar navbar-expand-lg bg-transparent navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home.html">Vibquest</a>
+          <a class="navbar-brand" href="home.html">VIBQUEST</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,83 +29,99 @@
           </div>
         </div>
       </nav>
+    </header>
+
 
      <div class="grid">
       <main>
-      <!-- search section-->
-      <!-- categories section-->
       <div class="categories">
-        <h1>ART EXPLORE</h1>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enter</button>
-          </div>
+        <h1 class ="pagetitle">ART EXPLORE</h1>
+        <form class="searchForm">
+          <input type="text" id="answer" value ="search"></input>
+          <button class="searchbutton" type="submit">Submit</button>
+        </form>
         <h2 class="categories__h1">Categories</h2>
-        <p class="categories__p">Fill in your art preferences below and we will show you
+        <p class="categories__p">Select your art preferences below and we will show you
         recommendations.
         </p>
-        <h6 class="categories__h6"> Category A -culture</h6>
-            <div class="box__item active">history</div>
-            <div class="box__item">Afghan</div>
-            <div class="box__item">British</div>
-            <div class="box__item">North African</div>
+        <h6 class="categories__h6">Culture</h6>
+            <div class="box__item active">African</div>
+            <div class="box__item">Ancient greek</div>
+            <div class="box__item">Islamic</div>
+            <div class="box__item">Mayan</div>
+            <div class="box__item">Indian</div>
+            <div class="box__item">Chinese</div>
+            <div class="box__item">Pre-Columbian</div>
             <div class="box__item">Japanese</div>
-        <h6 class="categories__h6">Category B</h6>
-            <div class="box__item active">modern</div>
-            <div class="box__item">imperial</div>
-            <div class="box__item">roman</div>
-            <div class="box__item">crusdar</div>
+            <div class="box__item">Italian</div>
+            <div class="box__item">Native American</div>
+            <div class="box__item">Korean</div>
+            <div class="box__item">Egyptian</div>
+        <h6 class="categories__h6">Medium</h6>
+            <div class="box__item active">Etching</div>
+            <div class="box__item">Ink and wash on paper</div>
+            <div class="box__item">Limestone</div>
+            <div class="box__item">Print</div>
+            <div class ="box__item">Watercolor</div>
+            <div class="box__item">Oil</div>
         <div class="box">
-        <div class="box__item generate">generate</div>
-            </div>
-        
-    </div>
-    <!-- art section-->
-    <div class = "art">
-        <!-- <h1>Art</h1> -->
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://images.metmuseum.org/CRDImages/is/mobile-large/sf08-256-122a.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://images.metmuseum.org/CRDImages/ep/mobile-large/DP123961.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://images.metmuseum.org/CRDImages/ao/mobile-large/DP-22133-001.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <!-- <span class="visually-hidden">Next</span> -->
-            </button>
+        <div class="generate">generate</div>
+       
+        </div>
+        <div class = "box">
+            <button id="clear-button">Delete All Saved Art</button>
           </div>
+           
+       
     </div>
-    <!-- info section-->
-    <div class="info">
-        <div class="circle__wrapper">
-            <div class="circle">
-                <ion-icon name="arrow-back"></ion-icon>
+    <div class = "art">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card " style="width: 18rem;">
+                        <img class="card-img-top artwork-image"/>
+                        <div class="card-body">
+                          <div class="card-text">
+                            <div class="content">
+                              <h2 class="artwork-title">Placeholder: Self-Portrait Dedicated to Paul Gauguin</h5>
+                              <h5 class="artwork-artist">Placeholder: Vincent van Gogh</h2>
+                              <h6 class="artwork-year">placeholder: 1888</h6>
+                              <button class="like-button"> Like
+                              </button>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
             </div>
+            </div>  
+       
+     
+   
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="content">
-            <h2 class="title__name">Placeholder: Self-Portrait Dedicated to Paul Gauguin</h5>
-            <h5 class="artist__name">Placeholder: Vincent van Gogh</h2>
-            <h6 class="year">placeholder: 1888</h6>
-        </div>
-        <!-- <div class="circle__wrapper">
-            <div class="circle">
-                <ion-icon name="arrow-back"></ion-icon>
-            </div>
-        </div> -->
-    </div>
+        </div>        
       </main>
     </div>
-      <footer> Copyright @2023 Vibequest </footer>
+    <!-- <footer> Copyright @2023 Vibequest </footer> -->
+    <footer class="bg-transparent text-center text-white">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Vibequest</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
