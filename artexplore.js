@@ -10,7 +10,7 @@ console.log(artImage);
 ////////////////////////////////////// DOM LOADED //////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   // Fetch artworks from the API-only want to get objects with primary images
-fetch(`${API_URL}objects?hasImages=true`)
+fetch(`${API_URL}objects?q=hasImages=true`)
 .then(response => response.json())
 .then(data => {
   console.log(`Artworks:`, data);

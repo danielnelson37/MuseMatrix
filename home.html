@@ -6,20 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./home.css"></link>
     <script src="home.js" defer></script>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>Vibequest</h1>   
-        </h3>
-        <h4>Mission Statement:This app will  suggest music and artwork based on a users interests and preferences. Users will also be able to search for specific music and art by typing in specific keywords or selecting specific categories.</h4>
+     <header>
+        <nav class="navbar navbar-expand-lg bg-transparent navbar-dark">
+            <div class="container-fluid" id="contain">
+              <a class="navbar-brand" href="home.html">VIBEQUEST</a>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="musicsearch.html">Music</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="artexplore.html">Art Explore</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
 
-    </header>     
-    
-   
+    <div class="container">
+    <main>
+        <h1>VIBEQUEST</h1>  
+        <h4>Welcome to Vibequest, an app that will suggest music and artwork based on an input. Click one of the icons to explore the creative realm of music or visual art.</h4>
+
     <div id="buttons">
-    <button id="music" onclick = "window.location.href = '../musicsearch.html';"> <img src="https://www.i2symbol.com/images/symbols/music/musical_notes_u1F3B6_icon_256x256.png" alt="Search icon"></button>
-    <button id="art" onclick = "window.location.href = '../artexplore.html';"> <img src="http://images.squarespace-cdn.com/content/v1/555bd98de4b0e2f61a55f51a/1463352929891-2D57N2TPUTNUVVM60AL6/artist-tools.png" alt="Search icon"></button>
+    <!-- <button id="music" onclick = "window.location.href = '../musicsearch.html';"> <img src="https://www.i2symbol.com/images/symbols/music/musical_notes_u1F3B6_icon_256x256.png" alt="Search icon"></button> -->
+    <!-- <button id="art" onclick = "window.location.href = '../artexplore.html';"> <img src="http://images.squarespace-cdn.com/content/v1/555bd98de4b0e2f61a55f51a/1463352929891-2D57N2TPUTNUVVM60AL6/artist-tools.png" alt="Search icon"></button> -->
+    <div class="card" style="width: 50%;">
+        <img class="card-img-top" src="https://i.pinimg.com/564x/4d/e3/d2/4de3d2d64bd5402fa624f8c501cd5294.jpg" alt="Card image cap">
+        <div class="card-body">
+            <a id="music" href="musicsearch.html" style ="text-decoration: none;">Music</a>
+        </div>
+      </div>
+      <div class="card" style="width: 50%;">
+        <img class="card-img-top" src="https://i.pinimg.com/236x/77/40/1b/77401b5b236d61cb9d071dd14bfc18d7.jpg" alt="Card image cap">
+        <div class="card-body">
+            <a id="art" href="artexplore.html" style ="text-decoration: none;">Visual Art</a>
+        </div>
+      </div>
+    
 </div>
+    </main>
+    </div>
+    <!-- <footer> Copyright @2023 Vibequest </footer> -->
+    <footer class="bg-transparent text-center text-white">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2023 Copyright:
+          <a class="text-white" href="home.html">VIBEQUEST</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
+</html>
