@@ -78,6 +78,10 @@ header{
     
 }
 
+.contain{
+    padding: 10%;
+}
+
 #music{
     background-color: #252525;
     color: white;
