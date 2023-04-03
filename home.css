@@ -8,21 +8,162 @@ body{
     background: rgb(180, 161, 134);
     background: radial-gradient(circle,rgba(180,161,134,1)0%,rgba(17,17,17,1)100%);
     font-family: sans-serif;
+    
 }
-h1{
+
+/* .navbar-brand {
+    font-size: 60px !important;
+    font-weight: bold;
+  } */
+  
+  
+  .navbar-brand {
+    font-size: 10px;
+  }
+  
+  
+  #navbarNav{
+    display: flex;
+    justify-content:flex-end;
+    font-size: 20px;
+  }
+  
+  
+  
+  
+  header{
+    /* background-color: #101010; */
+    color: white;
+    padding-left: 5%;
+  }
+
+  .container {
+    max-height: 100%;
+}
+  
+main > h1{
     display: flex;
     justify-content: center;
+    color:white;
+    font-size: 5em;
+    font-weight:bold;
+    padding-bottom: 2%;
+}
+
+main > h4{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align:center;
+    color: white; 
+    padding: 10px;
+    font-weight: 300;
 }
 header{
     color: white;
-  font-size: x-large;
     padding: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+
+.card {
+    background-color: #252525 !important; /* set the background color */
+    color: white !important; /* set the color */
+    border-radius: 10px; /* add rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
+    margin: 10%;
+    text-align: center;
+    
+  }
+
+.card-body{
+    display: flex;
+    justify-content: center;
+}
 #buttons{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 10%;
+    
 }
+
+#music{
+    background-color: #252525;
+    color: white;
+    padding: 5%;
+    font-size: 2em;
+    font-weight: bold;
+    border: none;
+}
+
+#music img{
+    width: 100%;
+}
+
+#music:hover{
+    color: #00afb5;
+}
+
+#art{
+    background-color: #252525;
+    color: white;
+    border-radius: 10px;
+    
+    font-size: 2em;
+    font-weight: bold;
+    border: none;
+
+}
+
+#art:hover{
+    color: #00afb5;
+}
+
+@media only screen and (max-width: 1000px) {
+    /* Select the parent container that holds all the elements */
+    main {
+      /* Use flexbox to create a single column layout */
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contain{
+        display:flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #navbarNav{
+        display: flex;
+        justify-content:center;
+        text-align: center;
+    }
+
+    .pagetitle{
+        font-size: xxx-large;
+    }
+    
+    /* Select the main content element */
+    .categories {
+      /* Set a width to ensure it takes up the full column */
+      width: 100%;
+      text-align: center;
+    }
+
+    #card{
+        width: 100%;
+    }
+
+    #art{
+    max-width: 100%;
+       margin: 10%;
+    }
+    #music{
+        max-width: 100%;
+           margin: 10%;
+        }
+  }
+
+
  

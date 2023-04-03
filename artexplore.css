@@ -35,10 +35,10 @@ header{
 }
 
 
-.navbar-brand {
+/* .navbar-brand {
     font-size: 60px !important;
     font-weight: bold;
-}
+} */
 
 
 .navbar-brand {
@@ -51,7 +51,6 @@ header{
     justify-content:flex-end;
     font-size: 20px;
 }
-
 
 main {
     width: 100%;
@@ -171,6 +170,7 @@ main {
     border: none;
     background: #00AFB5;
     color: white;
+    border-radius: 10%;
 }
 .box__item::after {
     content: '';
@@ -265,13 +265,9 @@ main {
 .card-img-top {
     max-height: 100%;
     max-width: 100%;
-            @media all and (max-width: 1200px) {
-                max-height: 300px;
-                max-width: 300px;
-            }
 
 
-        }
+}
 
 
 .painting {
@@ -283,6 +279,53 @@ footer {
     /* background-color: #101010; */
     color: white;
 }
+
+@media only screen and (max-width: 1000px) {
+    /* Select the parent container that holds all the elements */
+    main {
+      /* Use flexbox to create a single column layout */
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contain{
+        display:flex;
+        justify-content: center;
+    
+    }
+
+    #navbarNav{
+        display: flex;
+        justify-content:center;
+        text-align: center;
+    }
+
+    .pagetitle{
+        font-size: xxx-large;
+    }
+
+    .categories__h1{
+        font-size: 2.1em;
+    }
+    
+    /* Select the main content element */
+    .categories {
+      /* Set a width to ensure it takes up the full column */
+      width: 100%;
+      text-align: center;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .art{
+    max-width: 100%;
+       margin: 10%;
+    }
+  }
+
+
    
 
 
