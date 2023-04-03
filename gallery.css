@@ -19,9 +19,10 @@ background: radial-gradient(circle, rgba(180,161,134,1) 0%, rgba(17,17,17,1) 100
 } */
 
 
-/* .navbar-brand {
+ .navbar-brand {
+  margin-left: 2.5% !important;
   font-size: 60px;
-} */
+} 
 
 
 #navbarNav{
@@ -49,7 +50,7 @@ header{
   }
 
 
-  .card {
+.card {
     background-color: #252525 !important; /* set the background color */
     color: white !important; /* set the color */
     border-radius: 10px; /* add rounded corners */
@@ -57,7 +58,7 @@ header{
     text-align: center;
   }
 
-  .card:hover {
+.card:hover {
     color:#00afb5 !important;
   }
  

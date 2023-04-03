@@ -1,4 +1,3 @@
-
 const artTitle = document.querySelector(".artwork-title");
 const artArtist = document.querySelector(".artwork-artist");
 const artYear = document.querySelector(".artwork-year");

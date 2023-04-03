@@ -24,11 +24,6 @@ background: radial-gradient(circle, rgba(180,161,134,1) 0%, rgba(233,233,233,1) 
 background: radial-gradient(circle, rgba(180,161,134,1) 0%, rgba(17,17,17,1) 100%); */
 }
 
-
-
-
-
-
 header{
     /* background-color: #101010; */
     color: white;
@@ -43,6 +38,7 @@ header{
 
 .navbar-brand {
     font-size: 30px;
+    margin-left: 2.5% !important;
 }
 
 
