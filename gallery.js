@@ -82,6 +82,7 @@ for (let i = 0; i < savedArtDetails.length; i++) {
 
 
  clearButton.addEventListener('click', () => {
+
    console.log('clear button clicked');
    localStorage.clear();
  });
