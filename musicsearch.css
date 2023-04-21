@@ -4,6 +4,7 @@
 }
 
 
+
 nav ul {
     list-style: none;
     display: flex;
@@ -29,6 +30,7 @@ h1{
   flex-direction: column;
 }
 #page{
+  min-height: 100vh;
   color: white;
   background: rgb(180, 161, 134);
   background: radial-gradient(circle,rgba(180,161,134,1)0%,rgba(17,17,17,1)100%);
